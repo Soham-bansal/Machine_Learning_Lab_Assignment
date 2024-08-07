@@ -1,0 +1,192 @@
+import numpy as np
+# reverse array question 1
+arr=np.array([1,2,3,4,5,6]);
+newarr=np.flip(arr)
+print(newarr)
+# NOTE:With Numpy you can create only array of same row and same column 
+# flattening means make it one dimensional array from 2-D or something
+# two methods are their one is flatten or other is ravel function 
+arr2=np.array([[1,2,3],[4,5,6]]);
+newarr2=arr2.flatten() 
+newarr3=arr2.ravel()  
+print(newarr3)
+
+# compare tow numpy array question 3
+arr3=np.array([[1,2,3],[4,5,6]])
+arr4=np.array([[1,2,3]])
+
+# Their are multiple comparison in this
+# 1.element wise comparison
+result=(arr3==arr4) 
+print(result)
+# 2.checking whole array as one input and compare
+result2=np.array_equal(arr3,arr4)
+print(result2)
+
+# find the most frequent element in the numpy array
+arr5=np.array([[1,2,3,1,1,1,2,4,5,1]])
+# resul
+
+
+# find sum,.....
+gfg=np.matrix('[4,1,9;12,3,1;4,5,6]')
+sum=np.sum(gfg)
+print(sum)
+sum_row_wise=np.sum(gfg,1)
+print(sum_row_wise)
+
+sum_col_wise=np.sum(gfg,0)
+print(sum_col_wise)
+
+# finding det,inverse,eigen,....
+n_array=np.array([[55,25,15],[30,44,2],[11,45,77]])
+sum_diagonal=np.diag(n_array)
+print(sum_diagonal)
+
+print(np.linalg.inv(n_array))
+
+# eig=np.linalg.eig()
+
+
+# (E) operations on the matrix
+n_array=np.matrix('[4,1,9;12,3,1;4,5,6]')
+sum_diag=np.sum(n_array)
+print(sum_diag)
+
+sum_row_wise=np.sum(n_array,axis=1)
+print(sum_row_wise)
+
+sum_col_wise=np.sum(n_array,axis=0)
+print(sum_col_wise)
+
+
+# (f) operations on matrix
+arr100=np.array([[55,25,15],[30,44,2],[11,45,77]])
+get_daig_element=np.diag(arr100,k=0)
+sum_diag=np.sum(get_daig_element)
+print(sum_diag)
+
+# get eigenval,eigen vector
+e,p=np.linalg.eig(arr100)
+print(e)
+print(p)
+print("---------------------------------")
+inversed_array=np.linalg.inv(arr100)
+print(inversed_array)
+
+
+get_det=np.linalg.det(arr100)
+print(get_det)
+
+
+# (d) frequent values and their indices
+x=np.array([1,2,3,4,5,1,1,1])
+y=np.bincount(x)
+maximum=max(y)
+print(maximum)
+for i in range(len(y)):
+    if y[i]==maximum :
+        print(i)
+# (b) 
+arr101=np.array([[1,2],[3,4]])
+arr102=np.array([[1,2],[3,4]])
+result=arr
+result=np.array_equal(arr101,arr102)
+print(result)
+
+
+# (g)  multiply the matrices 
+# i 
+p=np.matrix('[1,2;2,3]')
+print(p)
+q=np.matrix('[4,5;6,7]')
+print(q)
+
+result=np.matmul(p,q)
+print(result)
+
+print(np.cov(p,q))
+
+p=np.array([[1,2],[2,3],[4,5]])
+q=np.array([[4,5,1],[6,7,2]])
+result=np.matmul(p,q)
+print(result)
+
+
+# (h) innner,outer,cartesian product
+x=np.array([[2,3,4],[3,2,9]])
+y=np.array([[1,5,0],[5,10,3]])
+mat_inner=np.inner(x,y)
+print(mat_inner)
+
+mat_outer=np.outer(x,y)
+print(mat_outer)
+
+# mat_dot=np.dot(x,y)
+# print(mat_dot)
+
+
+arra=np.array([[2,3,4],[3,2,9]])
+res=arra.flatten()
+print(res)
+
+
+new_arr=arra.ravel(order="F")
+print(np.mean(new_arr))
+print(np.median(new_arr))
+print(np.std(new_arr))
+
+arr=np.array([[1,-2,3],[-4,5,-6]])
+# element wise absolute ValueError 
+tt=np.abs(arr);
+print(tt)
+
+# find 25,50,75 th percentile of flatten array row wise,col wise 
+arr200=np.array([[1,-2,3],[-4,5,-6]])
+# for row wise flatten
+result=np.percentile(arr200.flatten(order="C"),[25,50,75])
+print(result)
+
+# for column wise
+result=np.percentile(arr200.flatten(order="F"),[25,50,75])
+print(result)
+
+
+
+
+
+# Q3 array=[]
+arr101=np.array([1.0,1.2,2.2,2.0,3.0,2.0])
+for i in range(len(arr101)):
+ if(np.dtype(arr101[i])==int):
+    print(arr101[i])
+print(np.floor(arr101))
+# np.trunc()
+
+
+# or the array: a = np.array([-1.8, -1.6, -0.5, 0.5,1.6, 1.8, 3.0]). Find floor, ceiling 
+# and truncated value, rounded values
+
+arr120=np.array([-1.8,-1.6,-0.5,0.5,1.6,1.8,3.0])
+# result=np.floor(arr120)
+# print(result)
+result=np.ceil(arr120)
+print(result)
+result=np.trunc(arr120)
+print(result)
+result=np.round(arr120)
+print(result)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
